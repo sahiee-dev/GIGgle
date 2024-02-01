@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIGgle</title>
+    <link rel="icon" href="icons8-notes-96.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="logo-div">
+                    <img src="GIGgle-logos_transparent-removebg-preview (1).png" alt="GIGgle Logo">
+                </div>
+                <!-- Search bar -->
+                <div class="search">
+                    <input class="search-bar" type="search" placeholder="Search gigs">
+                </div>
+                <!-- Link elements -->
+                <ul class="nav-list">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <section class="main">
+                <div class="header-text">
+                    <h1>
+                        <span class="text first-text">Get your works done
+                            <br>
+                            using
+                        </span>
+                        <span class="text sec-text"></span>
+                    </h1>
+                </div>
+                <div class="right-section">
+                    <img class="gif" src="social-employee-working-in-technical-support.gif">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- End of HTML -->
+    <!-- Start of JS -->
+    <script>
+        const text = document.querySelector(".sec-text");
+        const phrases = ["GIGgle"];
+        let phraseIndex = 0;
+        let letterIndex = 0;
+
+        const type = () => {
+            if (letterIndex < phrases[phraseIndex].length) {
+                text.textContent += phrases[phraseIndex].charAt(letterIndex);
+                letterIndex++;
+                setTimeout(type, 200); // Adjust the speed by changing the timeout value (in milliseconds)
+            } else {
+                setTimeout(erase, 1500); // Wait before erasing the text
+            }
+        };
+
+        const erase = () => {
+            if (letterIndex > 0) {
+                text.textContent = phrases[phraseIndex].substring(0, letterIndex - 1);
+                letterIndex--;
+                setTimeout(erase, 50); // Adjust the speed by changing the timeout value (in milliseconds)
+            } else {
+                phraseIndex = (phraseIndex + 1) % phrases.length; // Move to the next phrase
+                setTimeout(type, 500); // Wait before typing the next phrase
+            }
+        };
+
+        type(); // Start the typing effect
+    </script>
+</body>
+</html>

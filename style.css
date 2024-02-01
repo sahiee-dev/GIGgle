@@ -1,0 +1,134 @@
+body {
+    font-family: 'Nanum Gothic Coding', monospace;
+    background-color: #141414; /* Dark background color */
+    color: #F76F72; /* Main text color */
+    margin: 0; /* Remove default body margin */
+    overflow: hidden; /* Prevent default body scrollbars */
+}
+
+#header {
+    height: 100vh; /* Full height of the viewport */
+}
+
+nav {
+    width: 100%;
+    height: 20vh; /* 10% of the viewport height */
+    background-color: #141414; /* Darker navigation background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-div {
+    flex: 2;
+}
+
+.search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    height: 20px;
+    padding: 20px 30px;
+    background-color: #3f3f3f;
+    color: whitesmoke;
+    font-family: 'Nanum Gothic Coding', monospace;
+    border: none;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+input:hover{
+    padding: 25px 35px;
+}
+input:active{
+    padding: 25px 35px;
+}
+.nav-list {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.nav-list li {
+    margin: 10px 20px;
+}
+
+.nav-list a {
+    color: #F76F72;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+a:hover {
+    font-size: 23px;
+   
+}
+
+.nav-list a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: #F76F72;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 0px;
+    height: 80vh; /* 90% of the viewport height */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.main>div {
+    width: 545px;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.header-text {
+    max-width: 600px; /* Adjust as needed */
+}
+
+.right-section {
+    
+    align-items: center;
+}
+
+.gif {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.text {
+    display: block; /* Ensure each line is on a new line */
+}
+
+.first-text {
+    color: #3f3f3f; /* Dark background color */
+}
+
+.sec-text {
+    color: #F76F72;
+}
