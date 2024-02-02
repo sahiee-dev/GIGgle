@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIGgle</title>
-    <link rel="icon" href="icons8-notes-96.png">
+    <link rel="icon" href="tab-icon.png">
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +18,14 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="button-cont" id="gigButtonContainer">
+    <button class="gig-button">Get a GIG</button>
+    </div>
     <div id="header">
         <div class="container">
             <nav>
                 <div class="logo-div">
-                    <img src="GIGgle-logos_transparent-removebg-preview (1).png" alt="GIGgle Logo">
+                    <img src="main-logo.png" alt="GIGgle Logo">
                 </div>
                 <!-- Search bar -->
                 <div class="search">
@@ -31,7 +34,7 @@
                 <!-- Link elements -->
                 <ul class="nav-list">
                     <li><a href="#header">Home</a></li>
-                    <li><a href="#">Explore</a></li>
+                    <li><a href="#explore">Explore</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
@@ -47,11 +50,43 @@
                     </h1>
                 </div>
                 <div class="right-section">
-                    <img class="gif" src="social-employee-working-in-technical-support.gif">
+                    <img class="gif" src="animated-gif.gif">
                 </div>
             </section>
         </div>
     </div>
+
+
+    <!-- end of landing page -->
+    <!-- start of explore page -->
+<div id="explore">
+    <div class="container">
+            <h2>Explore.</h2>
+            <div class="works-container">
+                <div class="gig-template">
+                    <img class="template-img" src="writing.png">
+                    <h3>Writing</h3>
+                    <p>"Maximize efficiency by entrusting your writing needs to an expert, delivering tailored content that saves time.</p>
+                    <a href="">learn more..</a>
+                </div>
+                <div class="gig-template">
+                    <img class="template-img" src="editing.png">
+                    <h3>Video Editing</h3>
+                    <p>"Transform your vision into reality with expert video editing, creating stunning content that captivates and resonates."</p>
+                    <a href="">learn more..</a>
+                </div>
+                <div class="gig-template">
+                    <img class="template-img" src="lifestyle.png">
+                    <h3>Lifestyle</h3>
+                    <p>"Revamp your lifestyle with personalized suggestions, enhancing well-being and bringing positivity into every aspect of life."</p>
+                    <a href="">learn more..</a>
+                </div>
+            </div>
+            <div class="more-temp">
+            <center><button class="more-button">more..</button></center>
+        </div>
+    </div>
+</div>
 
     <!-- End of HTML -->
     <!-- Start of JS -->
@@ -84,5 +119,29 @@
 
         type(); // Start the typing effect
     </script>
+    <!-- above was the script for typing effect -->
+    <!-- now the script for gig button to disappear -->
+    <script>
+        // Get the button and the explore section
+        const gigButton = document.querySelector('.gig-button');
+        const exploreSection = document.getElementById('explore');
+    
+        // Set initial visibility
+        gigButton.style.display = isOnHeader() ? 'block' : 'none';
+    
+        // Check if the user is on the header section
+        function isOnHeader() {
+            return window.scrollY < exploreSection.offsetTop;
+        }
+    
+        // Toggle button visibility on scroll
+        document.addEventListener('scroll', function() {
+            gigButton.style.display = isOnHeader() ? 'block' : 'none';
+        });
+    </script>
+    
+    <!-- script for load-in animation -->
+    
+    
 </body>
 </html>
