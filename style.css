@@ -1,9 +1,35 @@
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Nanum Gothic Coding', monospace;
     background-color: #141414; /* Dark background color */
     color: #F76F72; /* Main text color */
     margin: 0; /* Remove default body margin */
-    overflow: hidden; /* Prevent default body scrollbars */
+    
+}
+
+.gig-button{
+    z-index: 100;
+    position: fixed;
+    bottom: 40px;
+    background-color: #F76F72;    
+    border: none;
+    border-radius: 20px 5px 20px 5px;
+    padding: 20px 20px;
+    font-family: 'nanum Gothic Coding', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.gig-button:hover{
+    background-color: #3f3f3f;
+    color: #F76F72;
+}
+.button-cont{
+    display: flex;
+    justify-content: center;
 }
 
 #header {
@@ -131,4 +157,65 @@ h1 {
 
 .sec-text {
     color: #F76F72;
+}
+#explore{
+    padding: 80px 0;
+   
+}
+h2{
+    font-size: 130px;
+    font-weight: bolder;
+    margin-bottom: 160px;
+    margin-top: 0px;
+}
+.works-container{
+    margin-top: 40px;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+.gig-template {
+    background-image: linear-gradient(#F76F72, #fff);
+    height: 430px;
+    width: 300px;
+    border-radius: 30px;
+    text-align: center; 
+    overflow: hidden; 
+    transition: transform 0.5s;
+}
+.gig-template:hover{
+    transform: scale(1.2);
+}
+
+.template-img {
+    width: 200px;
+    height: min-content; 
+}
+
+.gig-template h3 {
+    margin: 10px 0; 
+    font-size: 23px; 
+    color: #141414;
+}
+.gig-template p{
+    color: #141414;
+}
+.gig-template a{
+    color: #141414;
+    text-decoration: underline;
+}
+.more-button{
+    padding: 30px 90px;
+    background-color: #141414;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    margin-top: 100px;
+    transition: transform 0.5s;
+}
+.more-button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
