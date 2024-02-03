@@ -8,7 +8,29 @@ body {
     margin: 0; /* Remove default body margin */
     
 }
-
+.scroll-up {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 30px;
+    background-color: #F76F72;
+    color: #141414;
+    height: 50px; /* Adjust the height as needed */
+    width: 50px; /* Set a width to create a square button */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px 20px ;
+    text-decoration: none;
+    z-index: 100;
+    transition: all 0.5s;
+}
+.scroll-up:hover{
+    background-color: #3f3f3f;
+    color: #F76F72;
+}
 .gig-button{
     z-index: 100;
     position: fixed;
@@ -159,7 +181,8 @@ h1 {
     color: #F76F72;
 }
 #explore{
-    padding: 80px 0;
+    padding: 30px 0;
+    overflow: hidden;
    
 }
 h2{
@@ -175,6 +198,7 @@ h2{
     display: flex;
     justify-content:space-evenly;
     flex-wrap: wrap;
+    transition: 0.5s ease-in-out;
 }
 .gig-template {
     background-image: linear-gradient(#F76F72, #fff);
