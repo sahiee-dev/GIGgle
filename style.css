@@ -57,6 +57,62 @@ body {
 #header {
     height: 100vh; /* Full height of the viewport */
 }
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  font-size: 24px; /* Adjust size as needed */
+  margin: 10px; /* Adjust margin as needed */
+  cursor: pointer;
+}
+
+/* Rotate animation when clicked */
+.change .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.change .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Navigation List Styles */
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0 10px; /* Adjust margin as needed */
+}
+
+.nav-list a {
+  color: black; /* Adjust color as needed */
+  text-decoration: none;
+  font-size: 18px; /* Adjust font size as needed */
+}
+
+/* Show Navigation List on smaller screens */
+.show {
+  display: block !important;
+}
+
+/* Adjustments for smaller media devices */
+@media only screen and (max-width: 768px) {
+  /* Hide Navigation List by default on smaller screens */
+  .nav-list {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+    position: relative;
+    bottom: 20px; /* Adjust position as needed */
+}
+}
+
 
 nav {
     width: 100%;
@@ -66,13 +122,16 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-
+.main-logo{
+    margin-top: 20px;
+}
 .logo-div {
-    flex: 2;
+    flex:2;
+   
 }
 
 .search {
-    flex: 1;
+    flex: 2;
     display: flex;
     align-items: center;
 }
@@ -162,9 +221,10 @@ h1 {
 .right-section {
     
     align-items: center;
+    justify-content: center;
 }
 
-.gif {
+.working-main{
     max-width: 100%;
     max-height: 100%;
 }
@@ -242,4 +302,105 @@ h2{
 .more-button:hover{
     transform: scale(1.1);
     cursor: pointer;
+}
+/* Adjustments for smaller media devices */
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    .logo-div {
+        width: 100%; /* Make the logo div span the full width on smaller screens */
+    }
+    .main-logo{
+        width: fit-content;
+        margin-top: 40px;
+    }
+    input{
+        display: none;
+    }
+    /* Logo styles for larger screens */
+    .logo-div{
+        justify-content: center;
+    }
+    nav{
+        justify-content: center;
+        width: 100%;
+        height: 20vh; /* 10% of the viewport height */
+        background-color: #141414; /* Darker navigation background color */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .nav-list {
+        display: none; /* Hide navigation list on smaller screens */
+    }
+    .header-text{
+        height: 200px;
+        text-align: center;
+    }
+    .scroll-up {
+        display: none; /* Hide scroll-up button on smaller screens */
+    }
+    
+    .main {
+        flex-direction: column; /* Stack main content vertically on smaller screens */
+        height: auto; /* Remove fixed height for smaller screens */
+    }
+
+    .main > div {
+        width: 90%; /* Adjust width of main content for smaller screens */
+    }
+
+    h1 {
+        font-size: 40px; /* Adjust heading font size for smaller screens */
+        display: inline-block;
+    }
+    span{
+        display: inline-block;
+    }
+    .text .first-text{
+        display: inline-block;
+    }
+    .text .sec-text{
+        display: inline-block;
+    }
+    h2 {
+        font-size: 60px; /* Adjust heading font size for smaller screens */
+        margin-bottom: 80px; /* Adjust margin bottom for smaller screens */
+    }
+
+    .more-button {
+        padding: 20px 50px; /* Adjust padding for smaller screens */
+        margin-top: 50px; /* Adjust margin top for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    input {
+        padding: 15px 25px; /* Adjust input padding for smaller screens */
+    }
+
+    .nav-list li {
+        margin: 10px 10px; /* Adjust margin for navigation list items */
+    }
+
+    .gig-template {
+        width: 250px; /* Adjust gig template width for smaller screens */
+        height: 350px; /* Adjust gig template height for smaller screens */
+    }
+
+    .template-img {
+        width: 150px; /* Adjust template image width for smaller screens */
+    }
+
+    .gig-template h3 {
+        font-size: 18px; /* Adjust gig template heading font size for smaller screens */
+    }
+
+    .more-button {
+        padding: 15px 40px; /* Adjust padding for smaller screens */
+        margin-top: 30px; /* Adjust margin top for smaller screens */
+    }
 }
