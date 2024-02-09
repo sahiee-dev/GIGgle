@@ -1,0 +1,336 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Nanum Gothic Coding', monospace;
+    background-color: #141414; /* Dark background color */
+    color: grey;
+    margin: 20px; /* Remove default body margin */
+    
+}
+.scroll-up {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 30px;
+    background-color: #F76F72;
+    color: #141414;
+    height: 50px; /* Adjust the height as needed */
+    width: 50px; /* Set a width to create a square button */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px 20px ;
+    text-decoration: none;
+    z-index: 100;
+    transition: all 0.5s;
+}
+.scroll-up:hover{
+    background-color: #3f3f3f;
+    color: #F76F72;
+}
+.gig-button{
+    z-index: 100;
+    position: fixed;
+    bottom: 40px;
+    background-color: #F76F72;    
+    border: none;
+    border-radius: 20px 5px 20px 5px;
+    padding: 20px 20px;
+    font-family: 'nanum Gothic Coding', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.gig-button:hover{
+    background-color: #3f3f3f;
+    color: #F76F72;
+}
+.button-cont{
+    display: flex;
+    justify-content: center;
+}
+
+#header {
+    height: 100vh; /* Full height of the viewport */
+}
+/* Hamburger Menu Styles */
+
+
+/* Navigation List Styles */
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0 10px; /* Adjust margin as needed */
+}
+
+.nav-list a {
+  color: black; /* Adjust color as needed */
+  text-decoration: none;
+  font-size: 18px; /* Adjust font size as needed */
+}
+nav {
+    width: 100%;
+    height: 20vh; /* 10% of the viewport height */
+    background-color: #141414; /* Darker navigation background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-logo{
+    margin-top: 50px;
+}
+.logo-div {
+    flex:2;
+   
+}
+
+.search {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    height: 20px;
+    padding: 20px 30px;
+    background-color: #3f3f3f;
+    color: whitesmoke;
+    font-family: 'Nanum Gothic Coding', monospace;
+    border: none;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+input:hover{
+    padding: 25px 35px;
+}
+input:active{
+    padding: 25px 35px;
+}
+.nav-list {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.nav-list li {
+    margin: 10px 20px;
+}
+
+.nav-list a {
+    color: #F76F72;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+a:hover {
+    font-size: 23px;
+   
+}
+
+.nav-list a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: #F76F72;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 0px;
+    height: 80vh; /* 90% of the viewport height */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.main>div {
+    width: 545px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-left: 40px;
+    color: #F76F72;
+}
+
+.header-text {
+    max-width: 600px; /* Adjust as needed */
+}
+.desc{
+    width: 100%;
+    text-align: center;
+    height: 55px;
+    border: 1px solid #F76F72;
+    background-image: linear-gradient(to right, #F76F72, #f7f7f700);
+    border-left: none;
+    border-right: none;
+}
+.desc p{
+    color: rgba(255, 255, 255, 0.699);
+}
+/* Dropdown button */
+/* Dropdown button */
+.dropdown {
+    margin-top: 30px;
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.dropbtn {
+    background-color: #141414;
+    color: grey;
+    padding: 16px;
+    margin: 10px 40px;
+    
+    font-size: 16px;
+    border: 1px solid grey;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #141414;
+    border: 1px solid grey;
+    min-width: 160px;
+    margin: 0px 40px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: grey;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: 0.5s;
+}
+.dropdown-content a:focus{
+    color: #F76F72;
+}
+.dropbtn.active i{
+    transform: rotate(180deg);
+}
+.dropdown-content a:hover {
+    background-color: #141414;
+    color: #F76F72;
+}
+
+/* Change the background color of the dropdown button when hovered */
+.dropbtn:hover {
+    background-color: #141414;
+    border: 1px solid grey;
+    color: #F76F72;
+}
+.rndm-text{
+    display: flex;
+    align-items: center;
+    
+}
+.services-text{
+    margin: 20px 40px;
+    flex: 60%;
+}
+.sort-by{
+    flex: 1;
+    justify-content: center;
+}
+/*writing services start*/
+.writing-services-container{
+    display: flex;
+    margin: 60px 20px;
+    justify-content: space-evenly;
+}
+.gig{
+    height: 430px;
+    width: 300px;
+    background-color: #141414;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
+    border: 1px solid grey;
+    border-radius: 8px;
+}
+.gig img{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: min-content; 
+}
+.gig a{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+.gig a:hover{
+    text-decoration: underline;
+    
+}
+.author{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+}
+.author p{
+    flex-basis: 70%;
+    margin-left: 10px;
+}
+.author span{
+    flex-basis: 30%;
+    background-color: #3f3f3f;
+    color: #F76F72;
+    padding: 10px 10px;
+    margin-right: 10px;
+}
+.inbetween-gig{
+    display: flex;
+}
+.rating{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+    
+}
+.cost{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
