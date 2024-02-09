@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIGgle</title>
-    <link rel="icon" href="tab-icon.png">
+    <link rel="icon" href="resources/tab-icon.png">
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,26 +20,34 @@
     <!-- fontawsome link -->
     <script src="https://kit.fontawesome.com/8d509b82c7.js" crossorigin="anonymous"></script>
     <!-- fontawsome link end -->
+    <!-- js script link -->
+    <script src="scripts.js"></script>
+    <!-- j-query script link  -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
 <body>
+    
     <!-- scroll-up button -->
     <a href="#header" class="scroll-up"><i class="fas fa-chevron-up"></i></a>
-    <!-- done! -->
+    <!-- gig button -->
     <div class="button-cont" id="gigButtonContainer">
-    <button class="gig-button">Get a GIG</button>
+        <button class="gig-button">Get a GIG</button>
     </div>
     <div id="header">
         <div class="container">
             <nav>
                 <div class="logo-div">
-                    <img src="main-logo.png" alt="GIGgle Logo">
+                    <img class="main-logo" src="resources/main-logo.png" alt="GIGgle Logo">
                 </div>
+                <!-- Hamburger Menu Icon - Display only on smaller screens -->
+                <i class="fas fa-bars hamburger-menu" onclick="toggleNav()"></i>
                 <!-- Search bar -->
                 <div class="search">
                     <input class="search-bar" type="search" placeholder="Search gigs">
                 </div>
-                <!-- Link elements -->
-                <ul class="nav-list">
+                <!-- Navigation List -->
+                <ul class="nav-list" id="navList">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#explore">Explore</a></li>
                     <li><a href="#">Why GIGgle</a></li>
@@ -57,7 +65,7 @@
                     </h1>
                 </div>
                 <div class="right-section">
-                    <img class="gif" src="animated-gif.gif">
+                    <img class="gif" src="resources/working-main.gif">
                 </div>
             </section>
         </div>
@@ -71,37 +79,37 @@
             <h2>Explore.</h2>
             <div class="works-container">
                 <div class="gig-template">
-                    <img class="template-img" src="writing.png">
+                    <img class="template-img" src="/resources/writing.png">
                     <h3>Writing</h3>
                     <p>"Maximize efficiency by entrusting your writing needs to an expert, delivering tailored content that saves time."</p>
-                    <a href="#">learn more..</a>
+                    <a href="writing.html">learn more..</a>
                 </div>
                 <div class="gig-template">
-                    <img class="template-img" src="editing.png">
+                    <img class="template-img" src="/resources/editing.png">
                     <h3>Video Editing</h3>
                     <p>"Transform your vision into reality with expert video editing, creating stunning content that captivates and resonates."</p>
                     <a href="#">learn more..</a>
                 </div>
                 <div class="gig-template">
-                    <img class="template-img" src="lifestyle.png">
+                    <img class="template-img" src="/resources/lifestyle.png">
                     <h3>Lifestyle</h3>
                     <p>"Revamp your lifestyle with personalized suggestions, enhancing well-being and bringing positivity into every aspect of life."</p>
                     <a href="#">learn more..</a>
                 </div>
                 <div class="gig-template">
-                    <img class="template-img" src="web-dev.png">
+                    <img class="template-img" src="/resources/web-dev.png">
                     <h3>Web Development</h3>
                     <p>"Bring your ideas to life online through expert web development, crafting functional, visually appealing websites that leave a lasting impact."</p>
                     <a href="#">learn more..</a>
                 </div>
                 <div class="gig-template">
-                    <img class="template-img" src="design.png">
+                    <img class="template-img" src="/resources/design.png">
                     <h3>Design</h3>
                     <p>"Elevate your brand aesthetics with expert design, delivering visually stunning creations that leave a lasting impact."</p>
                     <a href="#">learn more..</a>
                 </div>
                 <div class="gig-template">
-                    <img class="template-img" src="art.png">
+                    <img class="template-img" src="/resources/art.png">
                     <h3>Art</h3>
                     <p>"Express your unique vision through captivating art, where creativity meets skill, bringing your ideas to life."</p>
                     <a href="#">learn more..</a>
@@ -113,112 +121,115 @@
         </div>
     </div>
     <!-- End of HTML -->
-    <!-- Start of JS -->
     <script>
-        const text = document.querySelector(".sec-text");
-        const phrases = ["GIGgle"];
-        let phraseIndex = 0;
-        let letterIndex = 0;
+        // Script for typing effect
+const text = document.querySelector(".sec-text");
+const phrases = ["GIGgle"];
+let phraseIndex = 0;
+let letterIndex = 0;
 
-        const type = () => {
-            if (letterIndex < phrases[phraseIndex].length) {
-                text.textContent += phrases[phraseIndex].charAt(letterIndex);
-                letterIndex++;
-                setTimeout(type, 200); // Adjust the speed by changing the timeout value (in milliseconds)
-            } else {
-                setTimeout(erase, 1500); // Wait before erasing the text
-            }
-        };
+const type = () => {
+    if (letterIndex < phrases[phraseIndex].length) {
+        text.textContent += phrases[phraseIndex].charAt(letterIndex);
+        letterIndex++;
+        setTimeout(type, 200); // Adjust the speed by changing the timeout value (in milliseconds)
+    } else {
+        setTimeout(erase, 1500); // Wait before erasing the text
+    }
+};
 
-        const erase = () => {
-            if (letterIndex > 0) {
-                text.textContent = phrases[phraseIndex].substring(0, letterIndex - 1);
-                letterIndex--;
-                setTimeout(erase, 50); // Adjust the speed by changing the timeout value (in milliseconds)
-            } else {
-                phraseIndex = (phraseIndex + 1) % phrases.length; // Move to the next phrase
-                setTimeout(type, 500); // Wait before typing the next phrase
-            }
-        };
+const erase = () => {
+    if (letterIndex > 0) {
+        text.textContent = phrases[phraseIndex].substring(0, letterIndex - 1);
+        letterIndex--;
+        setTimeout(erase, 50); // Adjust the speed by changing the timeout value (in milliseconds)
+    } else {
+        phraseIndex = (phraseIndex + 1) % phrases.length; // Move to the next phrase
+        setTimeout(type, 500); // Wait before typing the next phrase
+    }
+};
 
-        type(); // Start the typing effect
+type(); // Start the typing effect
     </script>
-    <!-- above was the script for typing effect -->
-    <!-- now the script for gig button to disappear -->
-    <script>
-        // Get the button and the explore section
-        const gigButton = document.querySelector('.gig-button');
-        const exploreSection = document.getElementById('explore');
-    
-        // Set initial visibility
-        gigButton.style.display = isOnHeader() ? 'block' : 'none';
-    
-        // Check if the user is on the header section
-        function isOnHeader() {
-            return window.scrollY < exploreSection.offsetTop;
-        }
-    
-        // Toggle button visibility on scroll
-        document.addEventListener('scroll', function() {
-            gigButton.style.display = isOnHeader() ? 'block' : 'none';
-        });
-    </script>
-    
-    <!-- script for load-in animation -->
-    <!-- script for sliding cards using jquery -->
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 <script>
-    $(document).ready(function() {
-        var container = $('.works-container');
-        var templates = container.children();
+    // Script for gig button to disappear
+// Get the button and the explore section
+const gigButton = document.querySelector('.gig-button');
+const exploreSection = document.getElementById('explore');
 
-        // Variable to track the current set of visible templates
-        var currentSet = 1;
+// Set initial visibility
+gigButton.style.display = isOnHeader() ? 'block' : 'none';
 
-        function slideCards() {
-            container.animate({marginLeft: "-=330px"}, 500, function() {
-                var firstChild = container.children().first();
-                firstChild.appendTo(container);
-                container.css('margin-left', '0');
-            });
-        }
+// Check if the user is on the header section
+function isOnHeader() {
+    return window.scrollY < exploreSection.offsetTop;
+}
 
-        function showNextSet() {
-            // Calculate the start index of the next set
-            var startIndex = (currentSet - 1) * 3;
+// Toggle button visibility on scroll
+document.addEventListener('scroll', function() {
+    gigButton.style.display = isOnHeader() ? 'block' : 'none';
+});
 
-            // Hide all templates
-            templates.hide();
+// Script for load-in animation and sliding cards using jQuery
+$(document).ready(function() {
+    var container = $('.works-container');
+    var templates = container.children();
 
-            // Show the next three templates with a sliding animation
-            templates.slice(startIndex, startIndex + 3).fadeIn();
+    // Variable to track the current set of visible templates
+    var currentSet = 1;
 
-            // Update the current set index
-            currentSet++;
-
-            // If all templates are shown, reset the current set index
-            if (startIndex + 3 >= templates.length) {
-                currentSet = 1;
-            }
-
-            // Queue the sliding animation after a delay
-            container.queue(function(next) {
-                slideCards();
-                next();
-            });
-        }
-
-        // Initial call to start the loop
-        showNextSet();
-
-        // Trigger the display of the next set when the "more" button is clicked
-        $('.more-button').on('click', function() {
-            showNextSet();
+    function slideCards() {
+        container.animate({marginLeft: "-=330px"}, 500, function() {
+            var firstChild = container.children().first();
+            firstChild.appendTo(container);
+            container.css('margin-left', '0');
         });
+    }
+
+    function showNextSet() {
+        // Calculate the start index of the next set
+        var startIndex = (currentSet - 1) * 3;
+
+        // Hide all templates
+        templates.hide();
+
+        // Show the next three templates with a sliding animation
+        templates.slice(startIndex, startIndex + 3).fadeIn();
+
+        // Update the current set index
+        currentSet++;
+
+        // If all templates are shown, reset the current set index
+        if (startIndex + 3 >= templates.length) {
+            currentSet = 1;
+        }
+
+        // Queue the sliding animation after a delay
+        container.queue(function(next) {
+            slideCards();
+            next();
+        });
+    }
+
+    // Initial call to start the loop
+    showNextSet();
+
+    // Trigger the display of the next set when the "more" button is clicked
+    $('.more-button').on('click', function() {
+        showNextSet();
     });
+});
+
 </script>
+<script>
+    // Function to toggle the visibility of the navigation list
+function toggleNav() {
+  var navList = document.getElementById("navList");
+  navList.classList.toggle("show");
+}
 
-
+</script>
 </body>
 </html>
